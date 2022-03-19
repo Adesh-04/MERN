@@ -3,3 +3,7 @@ npm install express
 npm install -g nodemon or npm install --save nodemon
 
 npx nodemon app.js
+
+
+if does not work then add following line in scripts object in package.json
+    "server" : "nodemon app.js"
