@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 
 
-const DB = "mongodb+srv://new_user:new@atlasazure.epz5f.mongodb.net/mernStack?retryWrites=true&w=majority"
+const DB = "mongodb+srv://new_user:<password>@atlasazure.epz5f.mongodb.net/<dbname>?retryWrites=true&w=majority"
 
 mongoose.connect(DB, {
     useNewUrlParser: true,
