@@ -1,6 +1,21 @@
-
+const mongoose = require('mongoose');
 const express = require('express');
 const app = express();
+
+
+const DB = "mongodb+srv://new_user:new@atlasazure.epz5f.mongodb.net/mernStack?retryWrites=true&w=majority"
+
+mongoose.connect(DB, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false
+}).then(() => {
+    console.log('connection successful');
+}).catch((err) => console.log('No connection'));
+
+
+
 
 
 
@@ -23,8 +38,12 @@ app.get('/about',middleware, (req, res)=> {
     res.send('Here you can see my information');
 }) ;                                         
 
-app.get('/contact', (req, res)=> {
-    res.send('This is my contact id');
+app.get('/purchase', (req, res)=> {
+    res.send('These are the products');
+}) ; 
+
+app.get('/cart',middleware, (req, res)=> {
+    res.send('This is the cart');
 }) ; 
 
 app.get('/login', (req, res)=> {
